@@ -101,4 +101,27 @@ var productsState = [
   
   // CALL THE DISPLAY FUNCTION
   homeDisplayProducts()
+
+  function addItemCart(title, price, imageSrc) {
+    var cartRow = document.createElement('div')
+    cartRow.classList.add('cart-row')
+    var cartItem = document.getElementsByClassName('cart-item')[0]
+    var cartItemName = document.getElementsByClassName('cart-item-title')
+    for (var s =0; s < cartItemName.length; s++) {
+      if  (cartItemName[s].innerText == title) {
+          alert('This already add Cart')
+          return
+      }
+    }
+    var cartRowContens = `
+    <div class="cart-item cart-column">
+        <img class="cart-item-image" src="${imageSrc}" width="100" height="100">
+        <span class="cart-item-title">${title}</span>
+    </div>
+    <span class="cart-price cart-column">${price}</span>
+    <div class="cart-quantity cart-column">
+        <input class="cart-quantity-input" type="number" value="1">
+        <button class="btn btn-danger" type="button">REMOVE</button>
+    </div>`
+  }
   
