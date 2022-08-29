@@ -69,59 +69,47 @@ var productsState = [
   
   // LINK JS TO HTML ELEMENT
   const products = document.getElementById('products')
+  let cartShopping = document.getElementById('cartShopping')
+  let cartRow = document.getElementById('cartRow')
+
+  let CountAdd = 0;
+
+  function onlines() {
+    cartShopping = document.getElementById('cartShopping').innerHTML = ++ CountAdd;
+
+  }
   
   
   // DISPLAY PRODUCTS IN HOME PAGE
   function homeDisplayProducts() {
       products.innerHTML = ""
     // loop into productsState and display
-    for (let i = 0; i < productsState.length; i++) {
+    for (let s = 0; s < productsState.length; s++) {
       products.innerHTML += `
       
       <div class="product">
           <div class="product__img">
               <img
-                src=${productsState[i].image}
+                src=${productsState[s].image}
                 alt=""
               />
           </div>
-              <div class="product__name">${productsState[i].name}</div>
+              <div class="product__name">${productsState[s].name}</div>
                 <div class="product__rate">
-                  ${'<span>*</span>'.repeat(productsState[i].rates)}
+                  ${'<span>*</span>'.repeat(productsState[s].rates)}
                 </div>
-                <div class="product__price">R <span>${productsState[i].price}</span></div> 
-                  <button>+ ADD TO CART</button> 
+                <div class="product__price">R <span>${productsState[s].price}</span></div> 
+                  <button onclick="onlines()">+ ADD TO CART</button> 
             </div>
       
       `
       
     }
-  }
+
   
+
   
   // CALL THE DISPLAY FUNCTION
   homeDisplayProducts()
 
-  function addItemCart(title, price, imageSrc) {
-    var cartRow = document.createElement('div')
-    cartRow.classList.add('cart-row')
-    var cartItem = document.getElementsByClassName('cart-item')[0]
-    var cartItemName = document.getElementsByClassName('cart-item-title')
-    for (var s =0; s < cartItemName.length; s++) {
-      if  (cartItemName[s].innerText == title) {
-          alert('This already add Cart')
-          return
-      }
-    }
-    var cartRowContens = `
-    <div class="cart-item cart-column">
-        <img class="cart-item-image" src="${imageSrc}" width="100" height="100">
-        <span class="cart-item-title">${title}</span>
-    </div>
-    <span class="cart-price cart-column">${price}</span>
-    <div class="cart-quantity cart-column">
-        <input class="cart-quantity-input" type="number" value="1">
-        <button class="btn btn-danger" type="button">REMOVE</button>
-    </div>`
-  }
-  
+}

@@ -13,14 +13,14 @@
   <body>
     
     <!--LOGO-->
-    <div class="logo"><span>SABU</span> MTN shopping app</div>
+    <div class="logo"><span>DA</span> MTN shopping app</div>
 
     <div class="container">
 
       <!--NAVBAR-->
       <nav>
         <a href="./index.html" class="active">Home</a>
-        <a href="./cart.html">Cart: <span>0</span></a>
+        <a href="./cart.html">Cart: <span id="cartShopping">0</span></a>
       </nav>
 
       <!--PRODUCTS SECTION-->
@@ -38,7 +38,7 @@
             <span>*</span><span>*</span><span>*</span><span>*</span>
           </div>
           <div class="product__price">R <span>2000</span></div>
-          <button class="">+ ADD TO CART</button>
+          <button onclick="onlines()">+ ADD TO CART</button>
         </div>
       </section>
     </div>
@@ -55,7 +55,7 @@
 
     <section class="container content-section">
       <h2 class="section-header">CART item here</h2>
-      <div class="cart-row">
+      <div class="cart-row" id="cartRow">
         <span class="cart-item cart-header cart-column">ITEM</span>
         <span class="cart-price cart-header cart-column">PRICE</span>
         <span class="cart-quantity cart-header cart-column">QUANTITY</span>
@@ -67,34 +67,9 @@
         <strong class="cart-total-title">Total</strong>
         <span class="cart-total-title">R0</span>
       </div>
-      <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
+      <button class="btn btn-primary btn-purchase" type="button" onclick="removed">PURCHASE</button>
     </section>
 
-    <!-- <section class="containerss contents-section">
-        <h2 class="section-headers">MERCH</h2>
-        <div class="shop-items">
-            <div class="shop-item">
-                <span class="shop-item-title">macbook</span>
-                <img class="shop-item-image" 
-                src="https://www.istore.co.za/media/catalog/product/m/a/macbook_pro_space_grey-1_2.png?format=jpeg"
-                width="280" height="280">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">R28 000</span>
-                    <button class="btn btn-danger shop-item-button" type="button">Remove</button>
-                </div>
-            </div>
-            <div class="shop-item">
-                <span class="shop-item-title">HP</span>
-                <img class="shop-item-image" 
-                src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                width="280" height="280">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">R27 000</span>
-                    <button class="btn btn-danger shop-item-button" type="button">Remove</button>
-                </div>
-            </div>
-        </div>
-    </section> -->
 
     <!--JAVASCRIPT-->
     <script src="./script.js"></script>
