@@ -6,7 +6,7 @@ var productsState = [
       price: 28000,
       rates: 5,
       image:
-        'https://www.istore.co.za/media/catalog/product/m/a/macbook_pro_space_grey-1_2.png?format=jpeg',
+        'https://www.cnet.com/a/img/resize/4e82f3a17554a5aff8089194237de5a3acfce3b4/2022/04/27/b796792b-5b34-4405-83eb-efc66371ee06/samsung-galaxy-book-2-pro-360-01.jpg?auto=webp&fit=crop&height=630&width=1200',
     },
     {
       id: 2,
@@ -14,7 +14,7 @@ var productsState = [
       price: 23000,
       rates: 3,
       image:
-        'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80',
+        'https://imageio.forbes.com/specials-images/imageserve/6148e5c7b85bfa189955ed22/0x0.jpg?format=jpg&width=1200',
     },
     {
       id: 1,
@@ -30,7 +30,7 @@ var productsState = [
       price: 8000,
       rates: 1,
       image:
-        'https://images.unsplash.com/photo-1589561084283-930aa7b1ce50?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1631&q=80',
+        'https://images.techadvisor.com/cmsdata/reviews/3803826/hp_pavilion_14_laptop02_thumb.jpg',
     },
     {
       id: 1,
@@ -79,11 +79,15 @@ var productsState = [
 
   function onlines() {
     cartShopping = document.getElementById('cartShopping').innerHTML = ++ CountAdd;
+    for (let s = 0; s < CountAdd.length; s++) {
+      cartShopping.innerHTML = ``
+    }
 
   }
   
   
-  // DISPLAY PRODUCTS IN HOME PAGE
+  
+  // DISPLAY INTO PRODUCTS
   function homeDisplayProducts() {
       products.innerHTML = ""
     // loop into productsState and display
