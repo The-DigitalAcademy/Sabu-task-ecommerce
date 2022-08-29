@@ -71,6 +71,9 @@ var productsState = [
   const products = document.getElementById('products')
   let cartShopping = document.getElementById('cartShopping')
   let cartRow = document.getElementById('cartRow')
+  let cartItem = document.getElementById('cartItem')
+  let cartPrice = document.getElementById('cartPrice')
+  let cartQuantity = document.getElementById('cartQuantity')
 
   let CountAdd = 0;
 
@@ -106,10 +109,10 @@ var productsState = [
       
     }
 
-  
+  }
 
   
   // CALL THE DISPLAY FUNCTION
   homeDisplayProducts()
 
-}
+  
