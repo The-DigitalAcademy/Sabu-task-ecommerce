@@ -76,6 +76,7 @@ var tableCart = []
 const products = document.getElementById('products')
 const cartShopping = document.getElementById('cartShopping');
 const prodDisplay = document.getElementById('prodDisplay');
+const totalCash = document.getElementById('totalCash');
 
 
 
@@ -114,19 +115,21 @@ function removeClear(i) {
   
   prodD()
 
+  CalculatorTotal()
+
   DataDisplayProducts()
   
 }
 
-function totalCash() {
-  var total = 0;
+function CalculatorTotal(i) {
+  let total = 0;
 
   for (let i = 0; i < tableCart.length; i++) {
         {
-          total += tableCart[i];
+          total += tableCart[i].price
         }
-        return total;
-    
+
+        totalCash.innerHTML = total
   }
 }
 
@@ -136,6 +139,8 @@ function online(i) {
   document.getElementById('cartShopping').innerHTML = tableCart.length;
 
   prodD()
+
+  CalculatorTotal()
 
   DataDisplayProducts()
 }
@@ -170,6 +175,8 @@ function prodD() {
 }
 
 prodD()
+
+CalculatorTotal()
 
 // CALL THE DISPLAY FUNCTION
 DataDisplayProducts()
