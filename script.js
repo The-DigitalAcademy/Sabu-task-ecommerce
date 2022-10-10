@@ -74,13 +74,12 @@ var tableCart = []
 
 // LINK JS TO HTML ELEMENT
 const products = document.getElementById('products')
-const cartShopping = document.getElementById('cartShopping');
-const prodDisplay = document.getElementById('prodDisplay');
 const totalCash = document.getElementById('totalCash');
 
 
 
-// DISPLAY INTO PRODUCTS
+
+// Add Function DISPLAY INTO PRODUCTS
 function DataDisplayProducts() {
   products.innerHTML = ""
   // loop into productsState and display
@@ -109,43 +108,7 @@ function DataDisplayProducts() {
  
 }
 
-// add function for removed
-function removeClear(i) {
-  tableCart.splice(i,1)
-  
-  prodD()
-
-  CalculatorTotal()
-
-  DataDisplayProducts()
-  
-}
-
-function CalculatorTotal(i) {
-  let total = 0;
-
-  for (let i = 0; i < tableCart.length; i++) {
-        {
-          total += tableCart[i].price
-        }
-
-        totalCash.innerHTML = total
-  }
-}
-
-// add function online
-function online(i) {
-  tableCart.push(productsState[i])
-  document.getElementById('cartShopping').innerHTML = tableCart.length;
-
-  prodD()
-
-  CalculatorTotal()
-
-  DataDisplayProducts()
-}
-
-// add FUNCTION and Display
+// Add Function and Display
 function prodD() {
   prodDisplay.innerHTML = ""
 
@@ -164,7 +127,7 @@ function prodD() {
                 ${'<span>*</span>'.repeat(tableCart[i].rates)}
               </div>
               <div class="product__price">R <span>${tableCart[i].price}</span></div> 
-                <button class="btn btn-danger" onclick="removeClear(${i})">X Clear</button> 
+                <button class="btn btn-danger" onclick="removeClear(${i})">Remove</button> 
           </div>
     
     `
@@ -174,9 +137,42 @@ function prodD() {
 
 }
 
-prodD()
+// Add function for removed
+function removeClear(i) {
+  tableCart.splice(i, 1)
+  document.getElementById('cartShopping').innerHTML = tableCart.length;
+  
+  prodD();
 
-CalculatorTotal()
+  CalculatorTotal();
+
+  DataDisplayProducts(); 
+}
+
+
+// Add function for calculator and total
+function CalculatorTotal() {
+  let total = 0;
+
+  for (let i = 0; i < tableCart.length; i++) {
+        {
+          total += Number(tableCart[i].price)
+        }
+  }
+  totalCash.innerHTML = "R" + total
+}
+
+// Add function for cart and count
+function online(i) {
+  tableCart.push(productsState[i])
+  document.getElementById('cartShopping').innerHTML = tableCart.length;
+
+  prodD();
+
+  CalculatorTotal();
+}
+
+prodD();
 
 // CALL THE DISPLAY FUNCTION
 DataDisplayProducts()
