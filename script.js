@@ -144,6 +144,8 @@ function removeClear(i) {
   
   prodD();
 
+  saveToStorage()
+
   CalculatorTotal();
 
   DataDisplayProducts(); 
@@ -169,8 +171,21 @@ function online(i) {
 
   prodD();
 
+  saveToStorage()
+
   CalculatorTotal();
 }
+
+//ADD function save data into local storage
+function saveToStorage() {
+
+  //JSON.stringify for change Array to string
+  let data = JSON.stringify(tableCart)
+  localStorage.setItem('tableCart',data)
+}
+
+//Add function read local storage user
+
 
 prodD();
 
