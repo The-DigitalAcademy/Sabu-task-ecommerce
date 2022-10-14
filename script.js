@@ -79,7 +79,7 @@ const totalCash = document.getElementById('totalCash');
 
 
 
-// Add Function DISPLAY INTO PRODUCTS
+// Add Function DISPLAY INTO PRODUCTS FROM HTML
 function DataDisplayProducts() {
   products.innerHTML = ""
   // loop into productsState and display
@@ -108,7 +108,7 @@ function DataDisplayProducts() {
  
 }
 
-// Add Function and Display
+// Add Function and Display INTO FROM COUNT AND CART
 function prodD() {
   prodDisplay.innerHTML = ""
 
@@ -137,7 +137,7 @@ function prodD() {
 
 }
 
-// Add function for removed
+// Add function for removed Into Arry
 function removeClear(i) {
   tableCart.splice(i, 1)
   document.getElementById('cartShopping').innerHTML = tableCart.length;
@@ -166,7 +166,7 @@ function CalculatorTotal() {
   totalCash.innerHTML = "R" + total
 }
 
-// Add function for cart and count
+// Add function for Cart
 function online(i) {
   tableCart.push(productsState[i])
   document.getElementById('cartShopping').innerHTML = tableCart.length;
