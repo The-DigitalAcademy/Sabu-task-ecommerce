@@ -3,7 +3,7 @@
 var productsState = [
   
   {
-    id: 1,
+    list: 1,
     name: 'Samsung Galaxy Z Flip 3',
     price: 20999,
     rates: 5,
@@ -11,7 +11,7 @@ var productsState = [
       'https://images.techadvisor.com/cmsdata/deal/3807448/galaxy_z_flip3__review_14.jpg?quality=50&strip=all',
   },
   {
-    id: 1,
+    list: 2,
     name: 'Iphone 13 Pro',
     price: 22999,
     rates: 4,
@@ -19,7 +19,7 @@ var productsState = [
       'https://imageio.forbes.com/specials-images/imageserve/6148e5c7b85bfa189955ed22/0x0.jpg?format=jpg&width=1200',
   },
   {
-    id: 1,
+    list: 3,
     name: 'Iphone 6 C',
     price: 5999,
     rates: 4,
@@ -27,7 +27,7 @@ var productsState = [
       'https://images.unsplash.com/photo-1565849904461-04a58ad377e0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=736&q=80',
   },
   {
-    id: 1,
+    list: 4,
     name: 'Samsung galaxy fold 4',
     price: 36999,
     rates: 5,
@@ -35,7 +35,7 @@ var productsState = [
       'https://images.samsung.com/za/smartphones/galaxy-z-fold4/images/galaxy-z-fold4_highlights_kv.jpg',
   },
   {
-    id: 1,
+    list: 5,
     name: 'huawei p50 pro',
     price: 14499,
     rates: 4,
@@ -43,7 +43,7 @@ var productsState = [
       'https://snapcraze.co.za/wp-content/uploads/2022/05/p50-pro-black.jpeg',
   },
   {
-    id: 1,
+    list: 6,
     name: 'honor magic 4 pro',
     price: 22499,
     rates: 5,
@@ -51,7 +51,7 @@ var productsState = [
       'https://www.hihonor.com/content/dam/honor/za/products/smartphone/honor-magic4-pro/lange/honor-magic4-facebook-shareimg.jpg',
   },
   {
-    id: 1,
+    list: 7,
     name: 'nokia x50 pro',
     price: 32000,
     rates: 4,
@@ -59,7 +59,7 @@ var productsState = [
       'https://www.pricepony.com.ph/blog/wp-content/uploads/2021/06/H6c875277bb864fa383b1adc7e8662b5fw.jpg',
   },
   {
-    id: 1,
+    list: 8,
     name: 'oppo reno 7',
     price: 17999,
     rates: 4,
@@ -148,7 +148,9 @@ function removeClear(i) {
 
   CalculatorTotal();
 
-  DataDisplayProducts(); 
+  readLocalStorage()
+
+  DataDisplayProducts()
 }
 
 
@@ -173,7 +175,9 @@ function online(i) {
 
   saveToStorage()
 
-  CalculatorTotal();
+  CalculatorTotal()
+
+  readLocalStorage()
 }
 
 //ADD function save data into local storage
@@ -185,7 +189,10 @@ function saveToStorage() {
 }
 
 //Add function read local storage user
-
+function readLocalStorage() {
+  let data = JSON.parse(localStorage.getItem('tableCart'))
+  tableCart = data
+}
 
 prodD();
 
