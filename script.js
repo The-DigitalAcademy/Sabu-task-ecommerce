@@ -110,6 +110,8 @@ function DataDisplayProducts() {
 
 // Add Function and Display INTO FROM COUNT AND CART
 function prodD() {
+
+  readLocalStorage()
   prodDisplay.innerHTML = ""
 
   for (let i = 0; i < tableCart.length; i++) {
@@ -141,16 +143,16 @@ function prodD() {
 function removeClear(i) {
   tableCart.splice(i, 1)
   document.getElementById('cartShopping').innerHTML = tableCart.length;
-  
-  prodD();
+
+  CalculatorTotal()
 
   saveToStorage()
-
-  CalculatorTotal();
 
   readLocalStorage()
 
   DataDisplayProducts()
+
+  prodD()
 }
 
 
@@ -164,6 +166,10 @@ function CalculatorTotal() {
         }
   }
   totalCash.innerHTML = "R" + total
+
+  saveToStorage()
+
+  readLocalStorage()
 }
 
 // Add function for Cart
@@ -171,13 +177,15 @@ function online(i) {
   tableCart.push(productsState[i])
   document.getElementById('cartShopping').innerHTML = tableCart.length;
 
-  prodD();
+  CalculatorTotal()
 
   saveToStorage()
 
-  CalculatorTotal()
-
   readLocalStorage()
+
+  DataDisplayProducts()
+
+  prodD()
 }
 
 //ADD function save data into local storage
@@ -193,8 +201,6 @@ function readLocalStorage() {
   let data = JSON.parse(localStorage.getItem('tableCart'))
   tableCart = data
 }
-
-prodD();
-
 // CALL THE DISPLAY FUNCTION
 DataDisplayProducts()
+prodD()
